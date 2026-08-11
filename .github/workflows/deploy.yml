@@ -19,7 +19,9 @@ jobs:
                   server: ${{ secrets.FTP_SERVER }}
                   username: ${{ secrets.FTP_USERNAME }}
                   password: ${{ secrets.FTP_PASSWORD }}
-                  server-dir: /public_html/
+                  # A conta de FTP dedicada já entra dentro de public_html,
+                  # então o destino é a própria raiz da sessão.
+                  server-dir: ./
                   exclude: |
                       **/.git*
                       **/.git*/**
