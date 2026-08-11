@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_arquivo/
+Disallow: /_projeto-speedtest/
+
+Sitemap: https://wellingtonbarboza.com/sitemap.xml

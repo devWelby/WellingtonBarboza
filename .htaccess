@@ -1,0 +1,57 @@
+Options -Indexes
+RewriteEngine On
+
+# --------------------------------------------------------------------
+# Página inicial: garante que o Apache sirva o index.html do portfólio.
+# (Sem esta linha, o Apache prioriza index.php e servia a página errada.)
+# --------------------------------------------------------------------
+DirectoryIndex index.html index.htm
+
+# --------------------------------------------------------------------
+# Redirecionamento HTTP -> HTTPS
+#
+# ATENÇÃO: só descomente as 3 linhas abaixo DEPOIS de confirmar que o
+# certificado SSL (AutoSSL) está ativo no cPanel da HostGator e que
+# https://wellingtonbarboza.com abre sem aviso de segurança.
+# Forçar HTTPS sem certificado válido deixa o site inacessível.
+# --------------------------------------------------------------------
+# RewriteCond %{HTTPS} off
+# RewriteCond %{HTTP:X-Forwarded-Proto} !https
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# --------------------------------------------------------------------
+# Bloqueio de pastas internas (não devem ser públicas)
+# --------------------------------------------------------------------
+RewriteRule ^(_arquivo|_projeto-speedtest|build|reports|config|includes|storage)/ - [F,L]
+
+# Bloqueio de arquivos sensíveis
+<FilesMatch "(?i)(^\.ht|.*\.log$|.*\.json$|\.ini$|\.md$)">
+    Require all denied
+</FilesMatch>
+
+# Compressão
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Cache de arquivos estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# Headers de segurança
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    # HSTS: descomente somente depois que o HTTPS estiver funcionando.
+    # Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
+</IfModule>
