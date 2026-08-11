@@ -508,6 +508,15 @@ textarea {
     border-color: var(--accent);
 }
 
+/* Armadilha para robôs: fora da tela, fora da ordem de tabulação. */
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .form-status {
     margin: 0;
     color: var(--accent);

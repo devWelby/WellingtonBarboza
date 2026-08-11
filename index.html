@@ -618,6 +618,18 @@
                                 required
                             ></textarea>
 
+                            <!-- Armadilha para robôs: invisível para pessoas. -->
+                            <div class="honeypot" aria-hidden="true">
+                                <label for="website">Deixe este campo vazio</label>
+                                <input
+                                    type="text"
+                                    id="website"
+                                    name="website"
+                                    tabindex="-1"
+                                    autocomplete="off"
+                                />
+                            </div>
+
                             <button type="submit" class="btn-primary">
                                 <i
                                     class="ph ph-paper-plane-right"

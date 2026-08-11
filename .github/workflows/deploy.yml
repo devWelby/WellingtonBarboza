@@ -5,6 +5,11 @@ on:
         branches:
             - main
 
+# O deploy só precisa ler o código. Sem isso, o token do job herda as
+# permissões padrão do repositório, que são mais amplas do que o necessário.
+permissions:
+    contents: read
+
 jobs:
     web-deploy:
         name: Deploy do Site
@@ -13,8 +18,10 @@ jobs:
             - name: Pegar os arquivos mais recentes
               uses: actions/checkout@v4
 
+            # Presas ao commit, não à tag: uma tag pode ser movida para outro
+            # código sem aviso, e essa action recebe as credenciais de FTP.
             - name: Enviar para a HostGator via FTP
-              uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+              uses: SamKirkland/FTP-Deploy-Action@8e83cea8672e3fbcbb9fdafff34debf6ae4c5f65 # v4.3.5
               with:
                   server: ${{ secrets.FTP_SERVER }}
                   username: ${{ secrets.FTP_USERNAME }}

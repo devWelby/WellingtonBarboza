@@ -155,6 +155,7 @@ function setupContactForm() {
         const name = form.name.value.trim();
         const email = form.email.value.trim();
         const message = form.message.value.trim();
+        const website = form.website ? form.website.value : "";
 
         if (!name || !email || !message) {
             setStatus("Preencha todos os campos antes de enviar.", true);
@@ -172,7 +173,7 @@ function setupContactForm() {
             const response = await fetch("api/contato.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, message }),
+                body: JSON.stringify({ name, email, message, website }),
             });
 
             const data = await response.json();
