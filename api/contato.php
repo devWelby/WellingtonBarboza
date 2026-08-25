@@ -12,7 +12,7 @@ declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
-const DESTINATARIO   = 'contatowellington1587@gmail.com';
+const DESTINATARIO   = 'contato@wellingtonbarboza.com';
 const LIMITE_CURTO   = 3;    // envios permitidos...
 const JANELA_CURTA   = 900;  // ...a cada 15 minutos
 const LIMITE_LONGO   = 8;    // envios permitidos...

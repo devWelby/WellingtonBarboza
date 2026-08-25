@@ -24,6 +24,7 @@
     --cream: #eae7e0;
     --border: rgba(255, 255, 255, 0.08);
     --border-strong: rgba(255, 255, 255, 0.16);
+    --rule-blue: #2c3557;
 
     --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, "SFMono-Regular",
         Consolas, monospace;
@@ -214,6 +215,35 @@ textarea {
     margin-top: 56px;
 }
 
+/* Seta que sinaliza conteudo abaixo da dobra. */
+.scroll-cue {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 38px;
+    color: var(--muted);
+    font-size: 1.85rem;
+    line-height: 1;
+    animation: float-down 2s ease-in-out infinite;
+    transition: color 0.2s ease;
+}
+
+.scroll-cue:hover {
+    color: var(--accent);
+}
+
+@keyframes float-down {
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+}
+
 /* --- Botões ------------------------------------------------------------ */
 .btn-primary {
     display: inline-flex;
@@ -285,7 +315,7 @@ textarea {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 375px;
     gap: 80px;
-    align-items: start;
+    align-items: center;
 }
 
 .about-text p {
@@ -531,10 +561,39 @@ textarea {
 /* --- Footer ------------------------------------------------------------ */
 .site-footer {
     padding: 70px 24px 56px;
+    border-top: 1px solid var(--rule-blue);
     color: var(--muted);
     font-size: 0.92rem;
     line-height: 2;
     text-align: center;
+}
+
+.footer-quote {
+    max-width: 620px;
+    margin: 0 auto 12px;
+}
+
+.footer-quote p {
+    color: var(--text);
+    font-size: clamp(0.9rem, 1.4vw, 1.02rem);
+    font-style: italic;
+    line-height: 1.9;
+}
+
+.footer-quote cite {
+    display: block;
+    margin-top: 14px;
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.footer-brand {
+    color: var(--text-strong);
+    font-weight: 500;
+    letter-spacing: 0.04em;
 }
 
 /* --- Voltar ao topo ---------------------------------------------------- */
@@ -659,6 +718,10 @@ textarea {
     .hero .btn-primary {
         margin-top: 40px;
         width: 100%;
+    }
+
+    .scroll-cue {
+        margin-top: 28px;
     }
 
     .contact-actions .btn-ghost {

@@ -24,23 +24,13 @@
             property="og:image"
             content="https://wellingtonbarboza.com/assets/images/perfil-640.jpg"
         />
+        <!-- O card do X/Twitter faz fallback para as og:* acima. -->
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-            name="twitter:title"
-            content="Wellington Barboza | Desenvolvedor Back-end"
-        />
-        <meta
-            name="twitter:description"
-            content="Portfólio com projetos em IA, automação, análise de dados e sistemas web."
-        />
-        <meta
-            name="twitter:image"
-            content="https://wellingtonbarboza.com/assets/images/perfil-640.jpg"
-        />
 
         <title>Wellington Barboza | Portfólio</title>
 
         <link rel="canonical" href="https://wellingtonbarboza.com/" />
+        <link rel="icon" href="favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -61,11 +51,12 @@
         <header class="site-header">
             <nav class="social-links" aria-label="Redes sociais">
                 <a
-                    href="https://www.youtube.com/@CanalDoWelby"
+                    href="https://github.com/devWelby"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <i class="ph ph-youtube-logo" aria-hidden="true"></i> Youtube
+                    <i class="ph ph-github-logo" aria-hidden="true"></i>
+                    GitHub
                 </a>
                 <a
                     href="https://www.instagram.com/eu.welby/"
@@ -106,11 +97,19 @@
                 </p>
 
                 <a
-                    href="mailto:contatowellington1587@gmail.com"
+                    href="mailto:contato@wellingtonbarboza.com"
                     class="btn-primary"
                 >
                     <i class="ph ph-envelope-simple" aria-hidden="true"></i> Me
                     envie um e-mail!
+                </a>
+
+                <a
+                    href="#about"
+                    class="scroll-cue"
+                    aria-label="Rolar para o conteúdo abaixo"
+                >
+                    <i class="ph ph-caret-down" aria-hidden="true"></i>
                 </a>
             </section>
 
@@ -184,49 +183,7 @@
                                     aria-selected="true"
                                     tabindex="0"
                                 >
-                                    AIko
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    type="button"
-                                    id="tab-job2"
-                                    class="tab-btn"
-                                    data-tab-target="job2"
-                                    role="tab"
-                                    aria-controls="job2"
-                                    aria-selected="false"
-                                    tabindex="-1"
-                                >
-                                    AMUSP
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    type="button"
-                                    id="tab-job3"
-                                    class="tab-btn"
-                                    data-tab-target="job3"
-                                    role="tab"
-                                    aria-controls="job3"
-                                    aria-selected="false"
-                                    tabindex="-1"
-                                >
-                                    AutoVideo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-                                    type="button"
-                                    id="tab-job4"
-                                    class="tab-btn"
-                                    data-tab-target="job4"
-                                    role="tab"
-                                    aria-controls="job4"
-                                    aria-selected="false"
-                                    tabindex="-1"
-                                >
-                                    Aura Finanças
+                                    Roteiro Aberto
                                 </button>
                             </li>
                         </ul>
@@ -234,109 +191,80 @@
                         <div class="tab-panels">
                             <div
                                 id="job1"
-                                class="tab-panel active"
+                                class="tab-panel"
                                 role="tabpanel"
                                 aria-labelledby="tab-job1"
                                 tabindex="0"
                             >
                                 <h3 class="job-title">
-                                    Arquitetura Cognitiva Híbrida IA
-                                    <span class="highlight">@ AIko</span>
+                                    Rede Social de Roteiros de Viagem
+                                    <span class="highlight"
+                                        >@ Roteiro Aberto</span
+                                    >
                                 </h3>
-                                <p class="job-date">Projeto atual</p>
+                                <p class="job-date">
+                                    Em produção · roteiroaberto.com.br
+                                </p>
 
                                 <ul class="job-details">
                                     <li>
-                                        <strong>Desafio:</strong> criar uma
-                                        assistente virtual responsiva e imersiva
-                                        que não dependesse 100% da nuvem para
-                                        funcionar.
+                                        <strong>Desafio:</strong> entregar uma
+                                        rede social completa — autenticação,
+                                        upload de mídia, feed personalizado,
+                                        moderação, painel administrativo, SEO e
+                                        monetização — rodando em hospedagem
+                                        compartilhada de baixo custo, sem Node,
+                                        sem Composer e sem etapa de build.
                                     </li>
                                     <li>
-                                        <strong>Solução:</strong> desenvolvi uma
-                                        Arquitetura Cognitiva Híbrida. A Aiko
-                                        alterna dinamicamente entre o Gemini 2.5
-                                        Flash-Lite (nuvem) para raciocínio
-                                        complexo e o Llama 3 (local via Ollama)
-                                        em caso de queda de rede, garantindo
-                                        alta disponibilidade.
+                                        <strong>Solução:</strong> construí do
+                                        zero a arquitetura MVC em PHP 8 puro:
+                                        front controller, roteador com
+                                        parâmetros, autoloader PSR-4, camada de
+                                        dados sobre PDO, sistema de templates e
+                                        cache de página inteira consciente de
+                                        sessão, que entrega HTML do disco ao
+                                        visitante anônimo sem abrir conexão com
+                                        o banco. São ~14.600 linhas próprias, 43
+                                        classes, 68 rotas e 10 tabelas InnoDB,
+                                        com zero dependências de runtime no
+                                        servidor.
                                     </li>
                                     <li>
-                                        <strong>Destaques:</strong> visão
-                                        computacional para analisar a
-                                        tela/webcam do usuário, pipeline de
-                                        auto-aperfeiçoamento (Knowledge
-                                        Distillation) e TTS/STT ultra-rápido
-                                        para interações em tempo real.
+                                        <strong>Destaques:</strong> mapa
+                                        interativo por dia de viagem (Leaflet +
+                                        OpenStreetMap, sem API key),
+                                        recomendação “Perto de você” com a
+                                        fórmula de haversine calculada no
+                                        próprio MySQL, remix de roteiros com
+                                        atribuição ao autor original, bot
+                                        heurístico de moderação com fila de
+                                        revisão humana e geração de imagens de
+                                        divulgação sob demanda com GD.
+                                    </li>
+                                    <li>
+                                        <strong>Segurança:</strong> prepared
+                                        statements em todas as consultas, CSRF
+                                        por sessão, bcrypt cost 12, login
+                                        persistente no padrão
+                                        selector:validator, validação da
+                                        assinatura RS256 do ID token do Firebase
+                                        no servidor e uploads reprocessados com
+                                        GD, convertidos para WebP e armazenados
+                                        fora da raiz pública.
                                     </li>
                                 </ul>
 
                                 <div class="job-tags">
-                                    <span>Gemini</span>
-                                    <span>Ollama</span>
-                                    <span>Visão Computacional</span>
-                                </div>
-
-                                <a
-                                    href="https://github.com/devWelby/Aiko"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="btn-ghost"
-                                >
-                                    <i
-                                        class="ph ph-arrow-square-out"
-                                        aria-hidden="true"
-                                    ></i>
-                                    Saiba mais
-                                </a>
-                            </div>
-
-                            <div
-                                id="job2"
-                                class="tab-panel"
-                                role="tabpanel"
-                                aria-labelledby="tab-job2"
-                                tabindex="0"
-                                hidden
-                            >
-                                <h3 class="job-title">
-                                    Sistema de Gestão de Aprendizagem
-                                    <span class="highlight">@ LMS</span>
-                                </h3>
-                                <p class="job-date">Projeto concluído</p>
-
-                                <ul class="job-details">
-                                    <li>
-                                        <strong>Desafio:</strong> digitalizar o
-                                        treinamento de agentes de Segurança
-                                        Pública com um sistema leve, intuitivo e
-                                        com alto nível de controle de dados.
-                                    </li>
-                                    <li>
-                                        <strong>Solução:</strong> construí uma
-                                        plataforma full-stack customizada em PHP
-                                        e MySQL, sem frameworks pesados,
-                                        garantindo máxima performance e
-                                        responsividade.
-                                    </li>
-                                    <li>
-                                        <strong>Destaques:</strong> sala de aula
-                                        virtual com travas pedagógicas (bloqueio
-                                        de provas até 100% de conclusão do
-                                        vídeo), dashboard analítico para
-                                        instrutores e proteção robusta contra
-                                        SQL Injection usando PDO e hash Bcrypt.
-                                    </li>
-                                </ul>
-
-                                <div class="job-tags">
-                                    <span>PHP</span>
+                                    <span>PHP 8</span>
                                     <span>MySQL</span>
+                                    <span>Bootstrap 5</span>
+                                    <span>Leaflet</span>
                                     <span>Segurança</span>
                                 </div>
 
                                 <a
-                                    href="https://github.com/devWelby/Sistema-Lms"
+                                    href="https://roteiroaberto.com.br"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="btn-ghost"
@@ -345,128 +273,7 @@
                                         class="ph ph-arrow-square-out"
                                         aria-hidden="true"
                                     ></i>
-                                    Saiba mais
-                                </a>
-                            </div>
-
-                            <div
-                                id="job3"
-                                class="tab-panel"
-                                role="tabpanel"
-                                aria-labelledby="tab-job3"
-                                tabindex="0"
-                                hidden
-                            >
-                                <h3 class="job-title">
-                                    AutoVideo Joiner &amp; Normalizer
-                                    <span class="highlight">@ Python</span>
-                                </h3>
-                                <p class="job-date">Projeto concluído</p>
-
-                                <ul class="job-details">
-                                    <li>
-                                        <strong>Desafio:</strong> automatizar a
-                                        junção de vários vídeos com resoluções e
-                                        proporções conflitantes sem distorcer ou
-                                        esticar a imagem.
-                                    </li>
-                                    <li>
-                                        <strong>Solução:</strong> criei uma
-                                        aplicação desktop com interface web
-                                        usando Python, Streamlit e
-                                        FFmpeg/MoviePy para processamento de
-                                        mídia.
-                                    </li>
-                                    <li>
-                                        <strong>Destaques:</strong> algoritmo de
-                                        <em>Smart Letterboxing</em> que detecta
-                                        a proporção mestre e insere barras
-                                        pretas dinamicamente, suporte a
-                                        transições de vídeo e tratamento
-                                        inteligente de faixas de áudio mudas.
-                                    </li>
-                                </ul>
-
-                                <div class="job-tags">
-                                    <span>Python</span>
-                                    <span>Streamlit</span>
-                                    <span>FFmpeg</span>
-                                </div>
-
-                                <a
-                                    href="https://github.com/devwelby/autovideo"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="btn-ghost"
-                                >
-                                    <i
-                                        class="ph ph-arrow-square-out"
-                                        aria-hidden="true"
-                                    ></i>
-                                    Saiba mais
-                                </a>
-                            </div>
-
-                            <div
-                                id="job4"
-                                class="tab-panel"
-                                role="tabpanel"
-                                aria-labelledby="tab-job4"
-                                tabindex="0"
-                                hidden
-                            >
-                                <h3 class="job-title">
-                                    Aura Finanças IA
-                                    <span class="highlight">@ Node.js</span>
-                                </h3>
-                                <p class="job-date">Projeto atual</p>
-
-                                <ul class="job-details">
-                                    <li>
-                                        <strong>Desafio:</strong> criar uma
-                                        plataforma de análise financeira pessoal
-                                        que interpretasse extratos em
-                                        PDF/CSV/XLSX com categorização
-                                        automática e insights úteis, mantendo
-                                        segurança de nível corporativo.
-                                    </li>
-                                    <li>
-                                        <strong>Solução:</strong> desenvolvi uma
-                                        aplicação em Node.js + Express com
-                                        MySQL, upload inteligente com conversão
-                                        de planilhas para CSV e integração com
-                                        Gemini 2.5 Flash-Lite para extrair
-                                        transações, classificar gastos e gerar
-                                        relatórios interativos.
-                                    </li>
-                                    <li>
-                                        <strong>Destaques:</strong> score de
-                                        saúde financeira (0-100), métricas de
-                                        poupança e runway, dashboard com metas
-                                        mensais, autenticação robusta (bcrypt,
-                                        bloqueio anti-força bruta e OAuth
-                                        Google), assinaturas Stripe com webhook
-                                        e monitoramento via healthcheck.
-                                    </li>
-                                </ul>
-
-                                <div class="job-tags">
-                                    <span>Node.js</span>
-                                    <span>MySQL</span>
-                                    <span>Stripe</span>
-                                </div>
-
-                                <a
-                                    href="https://github.com/devWelby/Aura-ai"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="btn-ghost"
-                                >
-                                    <i
-                                        class="ph ph-arrow-square-out"
-                                        aria-hidden="true"
-                                    ></i>
-                                    Saiba mais
+                                    Visitar o site
                                 </a>
                             </div>
                         </div>
@@ -597,7 +404,9 @@
                                 required
                             />
 
-                            <label class="sr-only" for="email">Seu e-mail</label>
+                            <label class="sr-only" for="email"
+                                >Seu e-mail</label
+                            >
                             <input
                                 type="email"
                                 id="email"
@@ -620,7 +429,9 @@
 
                             <!-- Armadilha para robôs: invisível para pessoas. -->
                             <div class="honeypot" aria-hidden="true">
-                                <label for="website">Deixe este campo vazio</label>
+                                <label for="website"
+                                    >Deixe este campo vazio</label
+                                >
                                 <input
                                     type="text"
                                     id="website"
@@ -644,10 +455,14 @@
         </main>
 
         <footer class="site-footer">
-            <p>Criado por Wellington Barboza usando HTML, CSS e JavaScript.</p>
-            <p>
-                © <span id="current-year"></span> Todos os direitos reservados.
-            </p>
+            <blockquote class="footer-quote">
+                <p>
+                    “Sempre acrescenta, sempre caminha, sempre avança: não pares
+                    no caminho, não retrocedas, não te desvies.”
+                </p>
+                <cite>Santo Agostinho</cite>
+            </blockquote>
+            <p><span id="current-year"></span> Todos os direitos reservados.</p>
         </footer>
 
         <button id="btn-top" aria-label="Voltar ao topo">

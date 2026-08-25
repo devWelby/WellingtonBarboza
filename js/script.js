@@ -2,14 +2,14 @@
    Portfólio — Wellington Barboza
    ========================================================================== */
 
-const EMAIL = "contatowellington1587@gmail.com";
+const EMAIL = "contato@wellingtonbarboza.com";
 
 /* --- Máquina de escrever ----------------------------------------------- */
 function setupTypewriter() {
     const target = document.getElementById("typewriter-text");
     if (!target) return;
 
-    const text = "Wellington Barboza :)";
+    const text = "Wellington Barboza!";
     const speed = 85;
 
     // Quem prefere menos movimento recebe o texto pronto.
@@ -30,9 +30,7 @@ function setupTypewriter() {
 /* --- Abas de projetos --------------------------------------------------- */
 function openTab(targetId) {
     document.querySelectorAll(".tab-panel").forEach((panel) => {
-        const isTarget = panel.id === targetId;
-        panel.hidden = !isTarget;
-        panel.classList.toggle("active", isTarget);
+        panel.hidden = panel.id !== targetId;
     });
 
     document.querySelectorAll(".tab-btn").forEach((button) => {
@@ -64,7 +62,8 @@ function setupTabs() {
             if (!step) return;
 
             event.preventDefault();
-            const next = buttons[(index + step + buttons.length) % buttons.length];
+            const next =
+                buttons[(index + step + buttons.length) % buttons.length];
             openTab(next.dataset.tabTarget);
             next.focus();
         });
@@ -76,11 +75,9 @@ function setupReveal() {
     const sections = document.querySelectorAll(".reveal");
     if (!sections.length) return;
 
-    const showAll = () =>
-        sections.forEach((section) => section.classList.add("active"));
-
+    // Navegador sem IntersectionObserver recebe tudo visível de uma vez.
     if (!("IntersectionObserver" in window)) {
-        showAll();
+        sections.forEach((section) => section.classList.add("active"));
         return;
     }
 
@@ -96,9 +93,6 @@ function setupReveal() {
     );
 
     sections.forEach((section) => observer.observe(section));
-
-    // Rede de segurança: o conteúdo nunca fica invisível.
-    window.setTimeout(showAll, 3000);
 }
 
 /* --- Voltar ao topo ------------------------------------------------------ */
@@ -186,7 +180,8 @@ function setupContactForm() {
                 form.reset();
             } else {
                 setStatus(
-                    data.message || "Não foi possível enviar. Abrindo seu e-mail...",
+                    data.message ||
+                        "Não foi possível enviar. Abrindo seu e-mail...",
                     true,
                 );
                 fallbackMailto(name, email, message);

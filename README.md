@@ -10,8 +10,9 @@ Publicado em [wellingtonbarboza.com](https://wellingtonbarboza.com/).
 ├── .github/workflows/deploy.yml   Deploy automático via FTP (HostGator)
 ├── .htaccess                      Regras do Apache: index, cache, segurança
 ├── api/contato.php                Endpoint do formulário de contato
-├── assets/images/                 Fotos otimizadas (versões 320/420/640/840)
+├── assets/images/                 foto-420/840 (Sobre mim) e perfil-640 (og:image)
 ├── css/style.css                  Todo o estilo do site
+├── favicon.svg                    Ícone da aba (SVG, sem arquivo binário)
 ├── js/script.js                   Máquina de escrever, abas, reveal, formulário
 ├── index.html                     Página única
 ├── robots.txt
@@ -38,9 +39,9 @@ arquivos para `/public_html/` via FTP.
 
 Secrets necessários no repositório: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`.
 
-> A extensão SFTP do VS Code (`.vscode/sftp.json`) está com `uploadOnSave`
-> desativado de propósito. Ligar isso faz cada arquivo salvo subir direto para
-> a produção, competindo com o deploy do GitHub Actions.
+> O deploy do GitHub Actions é o único caminho para a produção. Se um dia
+> usar a extensão SFTP do VS Code, mantenha `uploadOnSave` desativado: cada
+> arquivo salvo subiria direto para o ar, competindo com o workflow.
 
 ## HTTPS
 
