@@ -150,7 +150,7 @@ $ip = ipDoVisitante();
 if (!dentroDoLimite($ip)) {
     responder(
         false,
-        'Você já enviou algumas mensagens. Aguarde alguns minutos ou fale pelo WhatsApp.',
+        'Você já enviou algumas mensagens. Aguarde alguns minutos ou entre em contato por e-mail ou LinkedIn.',
         429
     );
 }
@@ -182,7 +182,7 @@ $enviado = @mail(
 );
 
 if (!$enviado) {
-    responder(false, 'Não foi possível enviar agora. Tente pelo WhatsApp ou e-mail direto.', 500);
+    responder(false, 'Não foi possível enviar agora. Tente pelo LinkedIn ou e-mail direto.', 500);
 }
 
 responder(true, 'Mensagem enviada com sucesso!');

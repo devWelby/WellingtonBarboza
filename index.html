@@ -121,7 +121,7 @@
                     <div class="about-grid">
                         <div class="about-text">
                             <p>
-                                Tenho 3 anos de experiência profissional como
+                                Tenho 4 anos de experiência profissional como
                                 <span class="highlight"
                                     >Desenvolvedor Back-end</span
                                 >, criando soluções para produtos digitais,
@@ -138,8 +138,8 @@
                             <p>
                                 Em 2026 estou concentrado em produtos com IA,
                                 evolução de sistemas próprios e no
-                                desenvolvimento do meu
-                                <span class="highlight">primeiro SaaS</span>.
+                                desenvolvimento de
+                                <span class="highlight">sites próprios</span>.
                             </p>
                         </div>
 
@@ -186,6 +186,20 @@
                                     Roteiro Aberto
                                 </button>
                             </li>
+                            <li>
+                                <button
+                                    type="button"
+                                    id="tab-job2"
+                                    class="tab-btn"
+                                    data-tab-target="job2"
+                                    role="tab"
+                                    aria-controls="job2"
+                                    aria-selected="false"
+                                    tabindex="-1"
+                                >
+                                    Noticiário IA
+                                </button>
+                            </li>
                         </ul>
 
                         <div class="tab-panels">
@@ -203,55 +217,32 @@
                                     >
                                 </h3>
                                 <p class="job-date">
-                                    Em produção · roteiroaberto.com.br
+                                    roteiroaberto.com.br
                                 </p>
 
                                 <ul class="job-details">
                                     <li>
-                                        <strong>Desafio:</strong> entregar uma
-                                        rede social completa — autenticação,
-                                        upload de mídia, feed personalizado,
-                                        moderação, painel administrativo, SEO e
-                                        monetização — rodando em hospedagem
-                                        compartilhada de baixo custo, sem Node,
-                                        sem Composer e sem etapa de build.
+                                        <strong>Desafio:</strong> conectar
+                                        viajantes em uma rede social para criar,
+                                        descobrir e compartilhar roteiros de
+                                        viagem.
                                     </li>
                                     <li>
-                                        <strong>Solução:</strong> construí do
-                                        zero a arquitetura MVC em PHP 8 puro:
-                                        front controller, roteador com
-                                        parâmetros, autoloader PSR-4, camada de
-                                        dados sobre PDO, sistema de templates e
-                                        cache de página inteira consciente de
-                                        sessão, que entrega HTML do disco ao
-                                        visitante anônimo sem abrir conexão com
-                                        o banco. São ~14.600 linhas próprias, 43
-                                        classes, 68 rotas e 10 tabelas InnoDB,
-                                        com zero dependências de runtime no
-                                        servidor.
+                                        <strong>Solução:</strong> desenvolvi uma
+                                        plataforma em PHP e MySQL, com perfis,
+                                        publicação de roteiros, fotos e feed
+                                        personalizado.
                                     </li>
                                     <li>
-                                        <strong>Destaques:</strong> mapa
-                                        interativo por dia de viagem (Leaflet +
-                                        OpenStreetMap, sem API key),
-                                        recomendação “Perto de você” com a
-                                        fórmula de haversine calculada no
-                                        próprio MySQL, remix de roteiros com
-                                        atribuição ao autor original, bot
-                                        heurístico de moderação com fila de
-                                        revisão humana e geração de imagens de
-                                        divulgação sob demanda com GD.
+                                        <strong>Destaques:</strong> mapas
+                                        interativos, recomendações de lugares
+                                        próximos e remix de roteiros com crédito
+                                        ao autor original.
                                     </li>
                                     <li>
-                                        <strong>Segurança:</strong> prepared
-                                        statements em todas as consultas, CSRF
-                                        por sessão, bcrypt cost 12, login
-                                        persistente no padrão
-                                        selector:validator, validação da
-                                        assinatura RS256 do ID token do Firebase
-                                        no servidor e uploads reprocessados com
-                                        GD, convertidos para WebP e armazenados
-                                        fora da raiz pública.
+                                        <strong>Segurança:</strong> autenticação
+                                        segura, proteção de dados e moderação de
+                                        conteúdo com revisão humana.
                                     </li>
                                 </ul>
 
@@ -265,6 +256,70 @@
 
                                 <a
                                     href="https://roteiroaberto.com.br"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="btn-ghost"
+                                >
+                                    <i
+                                        class="ph ph-arrow-square-out"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Visitar o site
+                                </a>
+                            </div>
+                            <div
+                                id="job2"
+                                class="tab-panel"
+                                role="tabpanel"
+                                aria-labelledby="tab-job2"
+                                tabindex="0"
+                                hidden
+                            >
+                                <h3 class="job-title">
+                                    Portal de Notícias sobre Inteligência Artificial
+                                    <span class="highlight">@ Noticiário IA</span>
+                                </h3>
+                                <p class="job-date">noticiarioia.com</p>
+
+                                <ul class="job-details">
+                                    <li>
+                                        <strong>Desafio:</strong> reunir notícias,
+                                        análises e contexto sobre inteligência
+                                        artificial em português, facilitando o
+                                        acompanhamento de um setor que muda
+                                        rapidamente.
+                                    </li>
+                                    <li>
+                                        <strong>Solução:</strong> desenvolvi um
+                                        portal editorial com manchetes, últimas
+                                        notícias e navegação por categorias,
+                                        cobrindo modelos, agentes, ferramentas,
+                                        hardware, pesquisa, mercado e regulação.
+                                    </li>
+                                    <li>
+                                        <strong>Destaques:</strong> busca de
+                                        notícias, glossário, balanço semanal,
+                                        assuntos em alta e newsletter para
+                                        acompanhar os principais acontecimentos.
+                                    </li>
+                                    <li>
+                                        <strong>Transparência:</strong> fontes
+                                        creditadas, distinção entre anúncios,
+                                        alegações e rumores, com política
+                                        editorial e explicação de como o portal
+                                        utiliza IA.
+                                    </li>
+                                </ul>
+
+                                <div class="job-tags">
+                                    <span>Inteligência Artificial</span>
+                                    <span>Portal Editorial</span>
+                                    <span>Busca</span>
+                                    <span>Newsletter</span>
+                                </div>
+
+                                <a
+                                    href="https://noticiarioia.com/"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     class="btn-ghost"
@@ -363,16 +418,14 @@
 
                             <div class="contact-actions">
                                 <a
-                                    href="https://wa.me/5587991632749?text=Oi%20Wellington!%20Vi%20seu%20portfolio%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    href="mailto:contato@wellingtonbarboza.com"
                                     class="btn-ghost"
                                 >
                                     <i
-                                        class="ph ph-whatsapp-logo"
+                                        class="ph ph-envelope-simple"
                                         aria-hidden="true"
                                     ></i>
-                                    Falar no WhatsApp
+                                    Falar por e-mail
                                 </a>
                                 <a
                                     href="https://www.linkedin.com/in/wellington-d-barboza/"
