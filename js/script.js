@@ -178,6 +178,13 @@ function setupContactForm() {
                     false,
                 );
                 form.reset();
+            } else if (response.status < 500) {
+                // Erro de validação ou limite de envios: a pessoa precisa
+                // corrigir ou esperar, não adianta abrir o e-mail.
+                setStatus(
+                    data.message || "Confira os dados e tente novamente.",
+                    true,
+                );
             } else {
                 setStatus(
                     data.message ||
