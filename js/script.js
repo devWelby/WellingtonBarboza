@@ -161,7 +161,7 @@ function setupContactForm() {
         if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.innerHTML =
-                '<i class="ph ph-circle-notch" aria-hidden="true"></i> Enviando...';
+                '<svg class="icon" aria-hidden="true"><use href="#i-circle-notch"></use></svg> Enviando...';
         }
         setStatus("Enviando sua mensagem...", false);
 

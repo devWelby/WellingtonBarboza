@@ -172,7 +172,7 @@ textarea {
     color: var(--accent);
 }
 
-.social-links i {
+.social-links .icon {
     font-size: 1.2rem;
 }
 
@@ -729,7 +729,7 @@ textarea {
         font-size: 0.9rem;
     }
 
-    .social-links i {
+    .social-links .icon {
         font-size: 1.05rem;
     }
 
