@@ -99,6 +99,36 @@ function setupReveal() {
     sections.forEach((section) => observer.observe(section));
 }
 
+/* --- Seção atual no menu ------------------------------------------------- */
+function setupSectionNav() {
+    const links = Array.from(document.querySelectorAll(".section-nav a"));
+    if (!links.length || !("IntersectionObserver" in window)) return;
+
+    const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+    // Uma faixa fina no meio da tela: a seção que a cruza é a atual.
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                const link = links.find(
+                    (item) => item.getAttribute("href") === `#${entry.target.id}`,
+                );
+                if (!link) return;
+                if (entry.isIntersecting) {
+                    link.setAttribute("aria-current", "true");
+                } else {
+                    link.removeAttribute("aria-current");
+                }
+            });
+        },
+        { rootMargin: "-45% 0px -50% 0px" },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+}
+
 /* --- Voltar ao topo ------------------------------------------------------ */
 function setupBackToTop() {
     const button = document.getElementById("btn-top");
@@ -210,6 +240,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupTypewriter();
     setupTabs();
     setupReveal();
+    setupSectionNav();
     setupBackToTop();
     setupCurrentYear();
     setupContactForm();
