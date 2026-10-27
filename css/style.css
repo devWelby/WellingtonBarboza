@@ -199,6 +199,9 @@ textarea {
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - var(--header-h));
+    /* svh ignora a barra de endereço do celular, que aparece e some ao
+       rolar. Navegador antigo fica com a linha acima. */
+    min-height: calc(100svh - var(--header-h));
     padding: 80px 24px;
     text-align: center;
 }
