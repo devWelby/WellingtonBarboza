@@ -8,17 +8,19 @@ Publicado em [wellingtonbarboza.com](https://wellingtonbarboza.com/).
 ```
 .
 ├── .github/workflows/deploy.yml   Deploy automático via FTPS (HostGator)
-├── .htaccess                      Regras do Apache: index, cache, segurança
+├── .htaccess                      Regras do Apache: index, 404, cache, segurança
+├── 404.html                       Página de erro (caminhos absolutos, noindex)
 ├── api/contato.php                Endpoint do formulário de contato
+├── apple-touch-icon.png           Ícone 180x180 para a tela inicial do iOS
 ├── assets/fonts/                  JetBrains Mono (woff2 variável) e licença OFL
 ├── assets/images/                 foto-420/840 em AVIF, WebP e JPG (Sobre mim)
 │                                  e og-1200x630 (og:image)
 ├── css/style.css                  Todo o estilo do site
 ├── favicon.svg                    Ícone da aba (SVG, sem arquivo binário)
-├── js/script.js                   Máquina de escrever, abas, reveal, formulário
+├── js/script.js                   Máquina de escrever, abas, reveal, menu, formulário
 ├── index.html                     Página única
 ├── robots.txt
-└── sitemap.xml
+└── sitemap.xml                    Atualize o <lastmod> a cada mudança de conteúdo
 ```
 
 ## Rodando localmente
