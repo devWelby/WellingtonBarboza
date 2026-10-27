@@ -92,6 +92,24 @@ textarea {
     color: var(--accent);
 }
 
+/* Ícones SVG: herdam o tamanho da fonte e a cor do texto, como um ícone de
+   fonte faria. O sprite com os desenhos fica fora do fluxo da página. */
+.icon {
+    display: inline-block;
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.125em;
+}
+
+.icon-sprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
