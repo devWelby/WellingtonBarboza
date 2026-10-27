@@ -127,14 +127,10 @@ function setupContactForm() {
     const submitBtn = form.querySelector("button[type='submit']");
     const originalBtnHtml = submitBtn ? submitBtn.innerHTML : "";
 
+    const status = form.querySelector(".form-status");
+
     function setStatus(message, isError) {
-        let status = form.querySelector(".form-status");
-        if (!status) {
-            status = document.createElement("p");
-            status.className = "form-status";
-            status.setAttribute("role", "status");
-            form.appendChild(status);
-        }
+        if (!status) return;
         status.textContent = message;
         status.classList.toggle("error", Boolean(isError));
     }
