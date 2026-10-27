@@ -26,6 +26,9 @@ jobs:
                   server: ${{ secrets.FTP_SERVER }}
                   username: ${{ secrets.FTP_USERNAME }}
                   password: ${{ secrets.FTP_PASSWORD }}
+                  # FTP puro manda usuário, senha e arquivos em texto aberto.
+                  # FTPS (FTP sobre TLS explícito) cifra a conexão inteira.
+                  protocol: ftps
                   # A conta de FTP dedicada já entra dentro de public_html,
                   # então o destino é a própria raiz da sessão.
                   server-dir: ./

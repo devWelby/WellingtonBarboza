@@ -7,7 +7,7 @@ Publicado em [wellingtonbarboza.com](https://wellingtonbarboza.com/).
 
 ```
 .
-├── .github/workflows/deploy.yml   Deploy automático via FTP (HostGator)
+├── .github/workflows/deploy.yml   Deploy automático via FTPS (HostGator)
 ├── .htaccess                      Regras do Apache: index, cache, segurança
 ├── api/contato.php                Endpoint do formulário de contato
 ├── assets/images/                 foto-420/840 (Sobre mim) e og-1200x630 (og:image)
@@ -35,7 +35,7 @@ cai automaticamente no `mailto:` — o comportamento esperado em ambiente local.
 ## Deploy
 
 O push para a branch `main` dispara o workflow do GitHub Actions, que envia os
-arquivos para `/public_html/` via FTP.
+arquivos para `/public_html/` via FTPS (FTP com TLS).
 
 Secrets necessários no repositório: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`.
 
