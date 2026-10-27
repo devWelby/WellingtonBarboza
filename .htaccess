@@ -62,6 +62,6 @@ RewriteRule ^(_arquivo|_projeto-speedtest|build|reports|config|includes|storage)
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
 
     # A página não tem script nem estilo inline, então nada de 'unsafe-inline'.
-    # As fontes vêm do Google Fonts; os ícones são SVG do próprio site.
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; object-src 'none'"
+    # Fonte e ícones são servidos pelo próprio site: nenhuma origem externa.
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; object-src 'none'"
 </IfModule>
