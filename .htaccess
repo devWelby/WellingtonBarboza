@@ -7,6 +7,9 @@ RewriteEngine On
 # --------------------------------------------------------------------
 DirectoryIndex index.html index.htm
 
+# Endereço inexistente mostra a página 404 do site, ainda com status 404.
+ErrorDocument 404 /404.html
+
 # --------------------------------------------------------------------
 # Redirecionamento HTTP -> HTTPS
 #
