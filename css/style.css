@@ -625,6 +625,26 @@ textarea {
     text-transform: uppercase;
 }
 
+.footer-social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 28px;
+    margin: 34px 0 6px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    transition: color 0.2s ease;
+}
+
+.footer-social a:hover {
+    color: var(--accent);
+}
+
 .footer-brand {
     color: var(--text-strong);
     font-weight: 500;
