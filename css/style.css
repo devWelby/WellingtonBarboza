@@ -168,11 +168,43 @@ textarea {
     -webkit-backdrop-filter: blur(10px);
 }
 
+/* Alinha as bordas do cabeçalho com as do conteúdo das seções. */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    max-width: calc(var(--container) - 48px);
+}
+
+.section-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    list-style: none;
+}
+
+.section-nav a {
+    color: var(--muted);
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.section-nav a:hover {
+    color: var(--text-strong);
+}
+
+/* Seção que está na tela, marcada pelo script com aria-current. */
+.section-nav a[aria-current="true"] {
+    color: var(--accent);
+}
+
 .social-links {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 34px;
+    gap: 30px;
 }
 
 .social-links a {
@@ -180,7 +212,7 @@ textarea {
     align-items: center;
     gap: 9px;
     color: var(--text);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     transition: color 0.2s ease;
 }
 
@@ -719,6 +751,21 @@ textarea {
 }
 
 @media (max-width: 820px) {
+    /* Sem espaço para os nomes, as redes ficam só com o ícone. O nome sai
+       da tela, mas continua sendo lido pelo leitor de tela. */
+    .social-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+    }
+
+    .social-links {
+        gap: 20px;
+    }
+
     .section {
         padding-block: 64px;
     }
@@ -758,16 +805,23 @@ textarea {
 }
 
 @media (max-width: 560px) {
-    .social-links {
-        gap: 18px;
+    /* No celular o cabeçalho fica só com as seções; as redes sociais
+       continuam no rodapé. */
+    .site-header .social-links {
+        display: none;
     }
 
-    .social-links a {
-        font-size: 0.9rem;
+    .header-inner {
+        justify-content: center;
     }
 
-    .social-links .icon {
-        font-size: 1.05rem;
+    .section-nav ul {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .section-nav a {
+        font-size: 0.88rem;
     }
 
     .hero {
