@@ -52,20 +52,22 @@ function setupTabs() {
             openTab(button.dataset.tabTarget);
         });
 
-        // Navegação por setas, como manda o padrão ARIA de tablist.
+        // Setas, Home e End, como manda o padrão ARIA de tablist.
         button.addEventListener("keydown", (event) => {
-            const keys = {
-                ArrowDown: 1,
-                ArrowRight: 1,
-                ArrowUp: -1,
-                ArrowLeft: -1,
+            const last = buttons.length - 1;
+            const targets = {
+                ArrowDown: (index + 1) % buttons.length,
+                ArrowRight: (index + 1) % buttons.length,
+                ArrowUp: (index + last) % buttons.length,
+                ArrowLeft: (index + last) % buttons.length,
+                Home: 0,
+                End: last,
             };
-            const step = keys[event.key];
-            if (!step) return;
+            const target = targets[event.key];
+            if (target === undefined) return;
 
             event.preventDefault();
-            const next =
-                buttons[(index + step + buttons.length) % buttons.length];
+            const next = buttons[target];
             openTab(next.dataset.tabTarget);
             next.focus();
         });
