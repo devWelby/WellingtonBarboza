@@ -423,14 +423,14 @@ textarea {
     display: none;
 }
 
-.job-title {
+.project-title {
     color: var(--text-strong);
     font-size: clamp(1.25rem, 2.2vw, 1.85rem);
     font-weight: 700;
     line-height: 1.4;
 }
 
-.job-date {
+.project-domain {
     margin-top: 12px;
     color: var(--muted);
     font-size: 0.95rem;
@@ -438,14 +438,14 @@ textarea {
     text-transform: uppercase;
 }
 
-.job-details {
+.project-details {
     margin-top: 34px;
     list-style: none;
     display: grid;
     gap: 22px;
 }
 
-.job-details li {
+.project-details li {
     position: relative;
     padding-left: 30px;
     color: var(--text);
@@ -453,26 +453,26 @@ textarea {
     line-height: 1.95;
 }
 
-.job-details li::before {
+.project-details li::before {
     content: "▸";
     position: absolute;
     left: 0;
     color: var(--accent);
 }
 
-.job-details strong {
+.project-details strong {
     color: var(--text-strong);
     font-weight: 500;
 }
 
-.job-tags {
+.tags {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 30px;
 }
 
-.job-tags span {
+.tags span {
     padding: 7px 14px;
     background: var(--bg-soft);
     color: var(--muted);
@@ -520,11 +520,11 @@ textarea {
     line-height: 1.85;
 }
 
-.skill-card .job-tags {
+.skill-card .tags {
     margin-top: 22px;
 }
 
-.skill-card .job-tags span {
+.skill-card .tags span {
     background: var(--surface);
 }
 
