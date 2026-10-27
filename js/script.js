@@ -9,15 +9,17 @@ function setupTypewriter() {
     const target = document.getElementById("typewriter-text");
     if (!target) return;
 
-    const text = "Wellington Barboza!";
+    // O nome já vem escrito no HTML, para quem está sem JavaScript e para
+    // buscadores. Aqui ele é apagado e redigitado letra a letra.
+    const text = target.textContent;
     const speed = 85;
 
-    // Quem prefere menos movimento recebe o texto pronto.
+    // Quem prefere menos movimento fica com o texto pronto.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        target.textContent = text;
         return;
     }
 
+    target.textContent = "";
     let index = 0;
     (function type() {
         if (index >= text.length) return;
