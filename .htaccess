@@ -71,6 +71,9 @@ RewriteRule ^(_arquivo|_projeto-speedtest|build|reports|config|includes|storage)
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
 
     # A página não tem script nem estilo inline, então nada de 'unsafe-inline'.
-    # Fonte e ícones são servidos pelo próprio site: nenhuma origem externa.
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; object-src 'none'"
+    # Fonte e ícones são servidos pelo próprio site. A única origem externa é
+    # o Cloudflare Web Analytics, que o Cloudflare injeta na página: o script
+    # vem de static.cloudflareinsights.com e as métricas são enviadas para
+    # cloudflareinsights.com.
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; form-action 'self'; base-uri 'self'; frame-ancestors 'self'; object-src 'none'"
 </IfModule>
