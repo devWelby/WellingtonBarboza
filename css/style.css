@@ -362,6 +362,11 @@ textarea {
     margin-top: 34px;
 }
 
+/* O <picture> só escolhe o formato; quem ocupa a célula do grid é a <img>. */
+.about-photo {
+    display: contents;
+}
+
 .about-img {
     width: 100%;
     aspect-ratio: 3 / 4;

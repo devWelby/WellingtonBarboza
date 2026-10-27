@@ -180,20 +180,40 @@
                             </p>
                         </div>
 
-                        <img
-                            src="assets/images/foto-420.jpg"
-                            srcset="
-                                assets/images/foto-420.jpg 405w,
-                                assets/images/foto-840.jpg 810w
-                            "
-                            sizes="(max-width: 980px) 340px, 375px"
-                            alt="Wellington Barboza"
-                            class="about-img"
-                            width="405"
-                            height="540"
-                            loading="lazy"
-                            decoding="async"
-                        />
+                        <!-- O navegador usa o primeiro formato que entende:
+                             AVIF, depois WebP, e o JPG como último recurso. -->
+                        <picture class="about-photo">
+                            <source
+                                type="image/avif"
+                                srcset="
+                                    assets/images/foto-420.avif 405w,
+                                    assets/images/foto-840.avif 810w
+                                "
+                                sizes="(max-width: 980px) 340px, 375px"
+                            />
+                            <source
+                                type="image/webp"
+                                srcset="
+                                    assets/images/foto-420.webp 405w,
+                                    assets/images/foto-840.webp 810w
+                                "
+                                sizes="(max-width: 980px) 340px, 375px"
+                            />
+                            <img
+                                src="assets/images/foto-420.jpg"
+                                srcset="
+                                    assets/images/foto-420.jpg 405w,
+                                    assets/images/foto-840.jpg 810w
+                                "
+                                sizes="(max-width: 980px) 340px, 375px"
+                                alt="Wellington Barboza"
+                                class="about-img"
+                                width="405"
+                                height="540"
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </picture>
                     </div>
                 </div>
             </section>
