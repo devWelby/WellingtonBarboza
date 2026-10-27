@@ -10,7 +10,7 @@ Publicado em [wellingtonbarboza.com](https://wellingtonbarboza.com/).
 ├── .github/workflows/deploy.yml   Deploy automático via FTP (HostGator)
 ├── .htaccess                      Regras do Apache: index, cache, segurança
 ├── api/contato.php                Endpoint do formulário de contato
-├── assets/images/                 foto-420/840 (Sobre mim) e perfil-640 (og:image)
+├── assets/images/                 foto-420/840 (Sobre mim) e og-1200x630 (og:image)
 ├── css/style.css                  Todo o estilo do site
 ├── favicon.svg                    Ícone da aba (SVG, sem arquivo binário)
 ├── js/script.js                   Máquina de escrever, abas, reveal, formulário
