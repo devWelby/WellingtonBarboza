@@ -45,5 +45,12 @@ Secrets necessários no repositório: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWOR
 
 ## HTTPS
 
-O redirecionamento HTTP → HTTPS e o header HSTS estão comentados no `.htaccess`.
-Ative o AutoSSL no cPanel primeiro; só depois descomente as linhas indicadas.
+O site está no ar com HTTPS válido, atrás do Cloudflare.
+
+- **HSTS:** ativo. O `.htaccess` envia `Strict-Transport-Security` (6 meses,
+  sem `preload`) em todas as respostas. O navegador só honra o header sobre
+  HTTPS, então enviá-lo sempre é seguro.
+- **HTTP → HTTPS:** quem redireciona hoje é o Cloudflare. As regras
+  equivalentes no `.htaccess` continuam comentadas de propósito. Só descomente
+  se o site sair do Cloudflare, ou se o modo SSL dele for "Full"/"Full
+  (strict)": no modo "Flexible", redirecionar na origem gera um loop.
