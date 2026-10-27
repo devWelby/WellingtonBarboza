@@ -13,6 +13,8 @@ header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
 const DESTINATARIO   = 'contato@wellingtonbarboza.com';
+// Fixo de propósito: o header Host é controlado por quem faz a requisição.
+const REMETENTE      = 'no-reply@wellingtonbarboza.com';
 const LIMITE_CURTO   = 3;    // envios permitidos...
 const JANELA_CURTA   = 900;  // ...a cada 15 minutos
 const LIMITE_LONGO   = 8;    // envios permitidos...
@@ -164,10 +166,8 @@ $corpo = "Nova mensagem enviada pelo formulário do portfólio.\n\n"
     . "IP: {$ip}\n\n"
     . "Mensagem:\n{$message}\n";
 
-$remetente = 'no-reply@' . preg_replace('/^www\./', '', (string) ($_SERVER['HTTP_HOST'] ?? 'wellingtonbarboza.com'));
-
 $headers = implode("\r\n", [
-    'From: Portfolio <' . $remetente . '>',
+    'From: Portfolio <' . REMETENTE . '>',
     'Reply-To: ' . $email,
     'Content-Type: text/plain; charset=UTF-8',
     'MIME-Version: 1.0',
@@ -178,7 +178,7 @@ $enviado = @mail(
     '=?UTF-8?B?' . base64_encode($assunto) . '?=',
     $corpo,
     $headers,
-    '-f' . $remetente
+    '-f' . REMETENTE
 );
 
 if (!$enviado) {
