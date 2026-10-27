@@ -49,6 +49,49 @@
             crossorigin
         />
         <link rel="stylesheet" href="css/style.css?v=20261027" />
+
+        <!-- Dados estruturados para buscadores. É um bloco de dados, não um
+             script executável, então a CSP não o bloqueia. -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "Person",
+                        "@id": "https://wellingtonbarboza.com/#pessoa",
+                        "name": "Wellington Barboza",
+                        "jobTitle": "Desenvolvedor Back-end",
+                        "url": "https://wellingtonbarboza.com/",
+                        "image": "https://wellingtonbarboza.com/assets/images/foto-840.jpg",
+                        "email": "mailto:contato@wellingtonbarboza.com",
+                        "knowsAbout": [
+                            "Desenvolvimento back-end",
+                            "APIs REST",
+                            "Inteligência artificial",
+                            "Automação",
+                            "PHP",
+                            "Python",
+                            "Node.js",
+                            "MySQL",
+                            "PostgreSQL"
+                        ],
+                        "sameAs": [
+                            "https://github.com/devWelby",
+                            "https://www.linkedin.com/in/wellington-d-barboza/",
+                            "https://www.instagram.com/eu.welby/"
+                        ]
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://wellingtonbarboza.com/#site",
+                        "name": "Wellington Barboza",
+                        "url": "https://wellingtonbarboza.com/",
+                        "inLanguage": "pt-BR",
+                        "author": { "@id": "https://wellingtonbarboza.com/#pessoa" }
+                    }
+                ]
+            }
+        </script>
     </head>
 
     <body>
