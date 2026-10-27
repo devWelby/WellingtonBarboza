@@ -365,9 +365,10 @@ textarea {
     margin-top: 34px;
 }
 
-/* O <picture> só escolhe o formato; quem ocupa a célula do grid é a <img>. */
+/* O <picture> é o item do grid; a <img> dentro dele ocupa toda a largura. */
 .about-photo {
-    display: contents;
+    display: block;
+    width: 100%;
 }
 
 .about-img {
@@ -695,7 +696,7 @@ textarea {
         justify-items: center;
     }
 
-    .about-img {
+    .about-photo {
         max-width: 340px;
     }
 
